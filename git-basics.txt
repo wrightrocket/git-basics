@@ -69,3 +69,97 @@ index 2686952..ee09bc1 100644
 +prettyt = json.loads(tenants.text)
 +pprint.pp(prettyt)
 
+
+$ git branch notes
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git branch
+* master
+  notes
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git checkout notes
+Switched to branch 'notes'
+
+
+wrigh@x751s MINGW64 ~/src/python/python001 (notes)
+$ cp /c/Users/wrigh/Dropbox/CIAT/DevNet/git-basics.txt .
+
+wrigh@x751s MINGW64 ~/src/python/python001 (notes)
+$ git status
+On branch notes
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git-basics.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+wrigh@x751s MINGW64 ~/src/python/python001 (notes)
+$ git add git-basics.txt
+
+wrigh@x751s MINGW64 ~/src/python/python001 (notes)
+$ git status
+On branch notes
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   git-basics.txt
+
+
+wrigh@x751s MINGW64 ~/src/python/python001 (notes)
+$ git commit -m 'GIT BASIC NOTES'
+[notes 5154302] GIT BASIC NOTES
+ 1 file changed, 71 insertions(+)
+ create mode 100644 git-basics.txt
+
+Modified git-basics.txt
+
+$ git commit git-basics.txt -m 'branching basics'
+On branch notes
+nothing to commit, working tree clean
+
+wrigh@x751s MINGW64 ~/src/python/python001 (notes)
+
+
+$ git checkout master
+Switched to branch 'master'
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git switch master
+Already on 'master'
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git branch
+* master
+  notes
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ ls
+get-tenant-json.py
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ get merge notes
+bash: get: command not found
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git merge notes
+Updating 404adad..5154302
+Fast-forward
+ git-basics.txt | 71 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
+ create mode 100644 git-basics.txt
+
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ ls
+get-tenant-json.py  git-basics.txt
+
+
