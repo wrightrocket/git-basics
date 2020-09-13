@@ -162,4 +162,31 @@ wrigh@x751s MINGW64 ~/src/python/python001 (master)
 $ ls
 get-tenant-json.py  git-basics.txt
 
+wrigh@x751s MINGW64 ~/src/python/python001 (master)
+$ git log
+commit 2c42db7c90bc2e9657178e0a92a42b05aee4caae (HEAD -> master)
+Author: WrightRocket <wright.keith@gmail.com>
+Date:   Sun Sep 13 16:19:49 2020 -0700
+
+    updated git-basics.txt
+
+commit 51543023c1fa521d84f68382d055f4d88f69c5e7 (notes)
+Author: WrightRocket <wright.keith@gmail.com>
+Date:   Sun Sep 13 16:12:04 2020 -0700
+
+    GIT BASIC NOTES
+
+commit 404adad5a2d82ec05d35da6895326d430c0487ac
+Author: WrightRocket <wright.keith@gmail.com>
+Date:   Sun Sep 13 16:00:02 2020 -0700
+
+    completed
+
+commit 6aa13ee42beac4a5a6ac229dd314225974c6e3a3
+Author: WrightRocket <wright.keith@gmail.com>
+Date:   Sun Sep 13 15:41:40 2020 -0700
+
+    Initial commit
+
+
 
