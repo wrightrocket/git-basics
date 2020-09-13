@@ -1,0 +1,71 @@
+git init <repo>
+
+cd <repo>
+
+git status
+
+Create <file>... with an editor
+
+git status
+
+To stage a file:
+git add <file>...
+
+git status
+
+To unstage <file>...
+git rm --cached <file>...
+
+git commit -m 'Initial commit'
+[master (root-commit) 6aa13ee] Initial commit
+
+git status
+
+Update <file>...
+
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+          modified:   get-tenant-json.py
+
+$ git commit -a -m 'completed'
+warning: LF will be replaced by CRLF in get-tenant-json.py.
+The file will have its original line endings in your working directory
+[master 404adad] completed
+ 1 file changed, 3 insertions(+)
+
+$ git log
+commit 404adad5a2d82ec05d35da6895326d430c0487ac (HEAD -> master)
+Author: WrightRocket <wright.keith@gmail.com>
+Date:   Sun Sep 13 16:00:02 2020 -0700
+
+    completed
+
+commit 6aa13ee42beac4a5a6ac229dd314225974c6e3a3
+Author: WrightRocket <wright.keith@gmail.com>
+Date:   Sun Sep 13 15:41:40 2020 -0700
+
+    Initial commit
+
+
+$ git diff 6aa13e 404ada
+diff --git a/get-tenant-json.py b/get-tenant-json.py
+index 2686952..ee09bc1 100644
+--- a/get-tenant-json.py
++++ b/get-tenant-json.py
+@@ -1,5 +1,6 @@
+ import json
+ import requests
++import pprint
+
+ requests.packages.urllib3.disable_warnings()
+ encoded_body = json.dumps({
+@@ -14,4 +15,6 @@ resp = requests.post("https://sandboxapicdc.cisco.com/api/aaaLogin.json", data=e
+ header = {"Cookie": "APIC-cookie=" + resp.cookies["APIC-cookie"]}
+ tenants = requests.get("https://sandboxapicdc.cisco.com/api/node/class/fvTenant.json?rsp-subtree-include=health,faults", headers=header, verify=False)
+ print(tenants.text)
++prettyt = json.loads(tenants.text)
++pprint.pp(prettyt)
+
