@@ -3,7 +3,7 @@ import requests
 import pprint
 # updated
 requests.packages.urllib3.disable_warnings()
-encoded_body = json.dumps({
+encoded_body = json.loads({
     "aaaUser": {
         "attributes": {
             "name": "admin",
